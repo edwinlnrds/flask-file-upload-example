@@ -27,7 +27,7 @@ def index():
             if file:
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-                flash("Upload file berhasil", "success")
+                flash(f"Upload file {file.filename} berhasil", "success")
         except Exception as e:
             flash(f'{e}', 'danger')
 
